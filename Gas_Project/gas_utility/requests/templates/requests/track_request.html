@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Track Service Requests</title>
+</head>
+<body>
+    <h1>Your Service Requests</h1>
+    <ul>
+        {% for request in service_requests %}
+            <li><a href="{% url 'view_request' request.id %}">{{ request.request_type }} - {{ request.status }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

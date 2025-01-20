@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Request Details</title>
+</head>
+<body>
+    <h1>Service Request {{ service_request.id }}</h1>
+    <p>Type: {{ service_request.get_request_type_display }}</p>
+    <p>Description: {{ service_request.description }}</p>
+    <p>Status: {{ service_request.status }}</p>
+    <p>Created At: {{ service_request.created_at }}</p>
+    {% if service_request.resolved_at %}
+        <p>Resolved At: {{ service_request.resolved_at }}</p>
+    {% endif %}
+    {% if service_request.attached_file %}
+        <p>Attached File: <a href="{{ service_request.attached_file.url }}">Download</a></p>
+    {% endif %}
+</body>
+</html>
